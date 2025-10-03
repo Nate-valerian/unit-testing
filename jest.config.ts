@@ -11,7 +11,7 @@ const config: Config = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: "coverage",
-
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
@@ -27,7 +27,10 @@ const config: Config = {
     "!**/public/**",
     "!**/next.config.ts",
     "!**/app/layout.tsx",
+    "!**/app/**",
+    "!**/types/**",
   ],
+
   moduleNameMapper: {
     // ...
     "^@/components/(.*)$": "<rootDir>/components/$1",
