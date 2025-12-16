@@ -11,7 +11,7 @@ describe('ImageUpload', () => {
 
     const file = new File(['dummy content'], 'profile.png', { type: 'image/png' });
 
-    const fileInput = screen.getByTestId('file-upload');
+    const fileInput = document.getElementById('file-upload');
     fireEvent.change(fileInput, { target: { files: [file] } });
 
     expect(mockHandleChange).toHaveBeenCalledTimes(1);

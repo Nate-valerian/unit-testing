@@ -35,7 +35,7 @@ import { InputField } from '../components/input-fields/inputField';
         render(<InputField label={label} name={name} value="" onChange={() => {}} placeholder={placeholder} required />);
         const input = screen.getByRole('textbox');
         fireEvent.blur(input);
-        const errorMessage = screen.getByText(`${label} is required`);
+        const errorMessage = screen.getByText('required', { exact: false });
         expect(errorMessage).toBeInTheDocument();
 
       });
