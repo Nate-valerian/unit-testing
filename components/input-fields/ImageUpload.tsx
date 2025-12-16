@@ -56,11 +56,13 @@ export const ImageUpload: FC<ImageUploadProps> = ({ handleChange }) => {
     <div>
       <Label htmlFor="profileImage" label="Profile Picture" />
       <div
-        className={`mt-2 flex items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer transition-colors ${
-          isDragging
-            ? "bg-gray-600 border-cyan-500"
-            : "bg-gray-700 hover:bg-gray-600"
-        }`}
+        className={`mt-2 flex items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer transition-colors
+           ${
+             isDragging
+             ? "bg-gray-600 border-cyan-500"
+             : "bg-gray-700 hover:bg-gray-600"
+            }`}
+        data-testid="drop-zone"
         onDragOver={handleDragOver}
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
